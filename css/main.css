@@ -68,6 +68,10 @@ body {
   margin-bottom: 12px;
 }
 .collection-item-one {
+  grid-row-start: 1;
+  grid-row-end: span 2;
+  grid-column-start: 1;
+  grid-column-end: span 2;
   background-image: linear-gradient(
       to bottom right,
       rgba(255, 255, 255, 0.9),
@@ -77,6 +81,10 @@ body {
 }
 
 .collection-item-two {
+  grid-row-start: 1;
+  grid-row-end: span 1;
+  grid-column-start: 3;
+  grid-column-end: span 1;
   background-image: linear-gradient(
       to bottom right,
       rgba(255, 255, 255, 0.6),
@@ -86,6 +94,10 @@ body {
 }
 
 .collection-item-three {
+  grid-row-start: 1;
+  grid-row-end: span 1;
+  grid-column-start: 4;
+  grid-column-end: span 1;
   background-image: linear-gradient(
       to bottom right,
       rgba(255, 255, 255, 0.6),
@@ -95,6 +107,10 @@ body {
 }
 
 .collection-item-four {
+  grid-row-start: 2;
+  grid-row-end: span 1;
+  grid-column-start: 3;
+  grid-column-end: span 2;
   background-image: linear-gradient(
       to bottom right,
       rgba(255, 255, 255, 0),
@@ -103,9 +119,17 @@ body {
     url("../images/casual-collection.jpg"); /* Photo by Trendest Studio on Unsplash */
 }
 
+.collection-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 16px;
+  column-gap: 16px;
+}
+
 /*---- Product Section ----*/
 .product-item {
-  width: calc(100% / 3);
+  width: 100%;
   margin-bottom: 16px;
   padding: 0px 16px;
 }
@@ -125,10 +149,11 @@ body {
 }
 
 .product-list {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -16px;
-  margin-right: -16px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 16px;
+  column-gap: 32px;
 }
 .price {
   margin-top: 24px;
