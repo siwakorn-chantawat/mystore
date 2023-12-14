@@ -1,20 +1,25 @@
 /*---- Common ----*/
 body {
   font-family: "Rethink Sans", sans-serif;
+
 }
+
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0px auto;
 }
+
 .section {
   margin-bottom: 64px;
 }
+
 .section-title {
   font-size: 32px;
   font-weight: 500;
   margin-bottom: 24px;
 }
+
 /*---- Menu ----*/
 
 .logo {
@@ -26,8 +31,14 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 72px;
-}
 
+}
+.menu-bar-wrapper {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 999;
+}
 .nav-list {
   display: flex;
 }
@@ -40,9 +51,11 @@ body {
 .nav-item {
   margin-left: 24px;
 }
+
 /*---- Hero Section ----*/
 .hero-section {
-  background-image: url("../images/hero-background.jpg"); /* Photo by Nicholas Kampouris on Unsplash */
+  background-image: url("../images/hero-background.jpg");
+  /* Photo by Nicholas Kampouris on Unsplash */
   background-size: cover;
   background-position: center center;
   height: 720px;
@@ -67,62 +80,48 @@ body {
   font-weight: 600;
   margin-bottom: 12px;
 }
+
 .collection-item-one {
-  grid-row-start: 1;
-  grid-row-end: span 2;
-  grid-column-start: 1;
-  grid-column-end: span 2;
-  background-image: linear-gradient(
-      to bottom right,
+  grid-area: first;
+  background-image: linear-gradient(to bottom right,
       rgba(255, 255, 255, 0.9),
-      rgba(0, 0, 0, 0.1)
-    ),
-    url("../images/classic-collection.jpg"); /* Photo by NordWood Themes on Unsplash */
+      rgba(0, 0, 0, 0.1)),
+    url("../images/classic-collection.jpg");
+  /* Photo by NordWood Themes on Unsplash */
 }
 
 .collection-item-two {
-  grid-row-start: 1;
-  grid-row-end: span 1;
-  grid-column-start: 3;
-  grid-column-end: span 1;
-  background-image: linear-gradient(
-      to bottom right,
+  grid-area: second;
+  background-image: linear-gradient(to bottom right,
       rgba(255, 255, 255, 0.6),
-      rgba(255, 255, 255, 0.2)
-    ),
-    url("../images/sport-collection.jpg"); /* Photo by Tom Radetzki on Unsplash */
+      rgba(255, 255, 255, 0.2)),
+    url("../images/sport-collection.jpg");
+  /* Photo by Tom Radetzki on Unsplash */
 }
 
 .collection-item-three {
-  grid-row-start: 1;
-  grid-row-end: span 1;
-  grid-column-start: 4;
-  grid-column-end: span 1;
-  background-image: linear-gradient(
-      to bottom right,
+  grid-area: third;
+  background-image: linear-gradient(to bottom right,
       rgba(255, 255, 255, 0.6),
-      rgba(255, 255, 255, 0.3)
-    ),
-    url("../images/sandal-collection.jpg"); /* Photo by Andy Garza on Unsplash */
+      rgba(255, 255, 255, 0.3)),
+    url("../images/sandal-collection.jpg");
+  /* Photo by Andy Garza on Unsplash */
 }
 
 .collection-item-four {
-  grid-row-start: 2;
-  grid-row-end: span 1;
-  grid-column-start: 3;
-  grid-column-end: span 2;
-  background-image: linear-gradient(
-      to bottom right,
+  grid-area: fourth;
+  background-image: linear-gradient(to bottom right,
       rgba(255, 255, 255, 0),
-      rgba(0, 0, 0, 0.2)
-    ),
-    url("../images/casual-collection.jpg"); /* Photo by Trendest Studio on Unsplash */
+      rgba(0, 0, 0, 0.2)),
+    url("../images/casual-collection.jpg");
+  /* Photo by Trendest Studio on Unsplash */
 }
 
 .collection-list {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "first first second third"
+    "first first fourth fourth";
   row-gap: 16px;
   column-gap: 16px;
 }
@@ -132,6 +131,8 @@ body {
   width: 100%;
   margin-bottom: 16px;
   padding: 0px 16px;
+  position: relative;
+
 }
 
 .product-item-title {
@@ -148,6 +149,20 @@ body {
   object-fit: cover;
 }
 
+.product-label {
+  background-color: #f87060;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 12px;
+  width: fit-content;
+  top: 24px;
+  left: -8px;
+  position: absolute;
+  top: 24px;
+  left: -8px;
+}
+
 .product-list {
   display: grid;
   grid-template-rows: 1fr 1fr;
@@ -155,9 +170,11 @@ body {
   row-gap: 16px;
   column-gap: 32px;
 }
+
 .price {
   margin-top: 24px;
 }
+
 /*---- About Section ----*/
 
 .about-image {
@@ -176,4 +193,16 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+/*---- Social Section ----*/
+
+.social-list {
+  position: fixed;
+  right: 72px;
+  bottom: 60px;
+}
+
+.social-logo {
+  width: 60px;
 }
