@@ -1,7 +1,6 @@
 /*---- Common ----*/
 body {
   font-family: "Rethink Sans", sans-serif;
-
 }
 
 .container {
@@ -31,7 +30,14 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 72px;
+}
 
+@media screen and (max-width: 768px) {
+  .menu-bar {
+    height: 96px;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
 }
 .menu-bar-wrapper {
   position: sticky;
@@ -44,11 +50,20 @@ body {
 }
 
 .nav-link {
+  text-transform: uppercase;
   text-decoration: none;
   color: black;
 }
 
-.nav-item {
+.nav-link:hover {
+  color: #f87060;
+}
+
+.nav-link:active {
+  opacity: 0.5;
+}
+
+.nav-item:not(:first-child) {
   margin-left: 24px;
 }
 
@@ -83,36 +98,44 @@ body {
 
 .collection-item-one {
   grid-area: first;
-  background-image: linear-gradient(to bottom right,
+  background-image: linear-gradient(
+      to bottom right,
       rgba(255, 255, 255, 0.9),
-      rgba(0, 0, 0, 0.1)),
+      rgba(0, 0, 0, 0.1)
+    ),
     url("../images/classic-collection.jpg");
   /* Photo by NordWood Themes on Unsplash */
 }
 
 .collection-item-two {
   grid-area: second;
-  background-image: linear-gradient(to bottom right,
+  background-image: linear-gradient(
+      to bottom right,
       rgba(255, 255, 255, 0.6),
-      rgba(255, 255, 255, 0.2)),
+      rgba(255, 255, 255, 0.2)
+    ),
     url("../images/sport-collection.jpg");
   /* Photo by Tom Radetzki on Unsplash */
 }
 
 .collection-item-three {
   grid-area: third;
-  background-image: linear-gradient(to bottom right,
+  background-image: linear-gradient(
+      to bottom right,
       rgba(255, 255, 255, 0.6),
-      rgba(255, 255, 255, 0.3)),
+      rgba(255, 255, 255, 0.3)
+    ),
     url("../images/sandal-collection.jpg");
   /* Photo by Andy Garza on Unsplash */
 }
 
 .collection-item-four {
   grid-area: fourth;
-  background-image: linear-gradient(to bottom right,
+  background-image: linear-gradient(
+      to bottom right,
       rgba(255, 255, 255, 0),
-      rgba(0, 0, 0, 0.2)),
+      rgba(0, 0, 0, 0.2)
+    ),
     url("../images/casual-collection.jpg");
   /* Photo by Trendest Studio on Unsplash */
 }
@@ -132,7 +155,6 @@ body {
   margin-bottom: 16px;
   padding: 0px 16px;
   position: relative;
-
 }
 
 .product-item-title {
@@ -175,6 +197,11 @@ body {
   margin-top: 24px;
 }
 
+.price::after {
+  content: "Baht";
+  margin-left: 6px;
+}
+
 /*---- About Section ----*/
 
 .about-image {
@@ -187,6 +214,17 @@ body {
 
 .about-content {
   display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+  .about-image {
+    width: 100%;
+    margin-bottom: 24px;
+    margin-right: 0px;
+  }
 }
 
 .about-box {
@@ -205,4 +243,29 @@ body {
 
 .social-logo {
   width: 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .social-list {
+    display: none;
+  }
+}
+/*---- Effects ----*/
+.hover-elevate {
+  transition: box-shadow 0.1s ease-out 0s, transform 0.1s ease-out 0s;
+  cursor: pointer;
+}
+
+.hover-elevate:hover {
+  box-shadow: rgba(32, 32, 32, 0.05) 0px 16px 16px 0px,
+    rgba(42, 42, 42, 0.05) 0px 8px 8px 0px,
+    rgba(49, 49, 49, 0.05) 0px 4px 4px 0px,
+    rgba(45, 45, 45, 0.05) 0px 2px 2px 0px,
+    rgba(35, 35, 35, 0.05) 0px 64px 64px 0px,
+    rgba(49, 49, 49, 0.05) 0px 32px 32px 0px;
+  transform: translateY(-10px);
+}
+
+.hover-elevate:active {
+  box-shadow: none;
 }
