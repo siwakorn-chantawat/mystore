@@ -3,10 +3,30 @@ body {
   font-family: "Rethink Sans", sans-serif;
 }
 
+.button {
+  display: block;
+  background-color: #f87060;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  width: fit-content;
+  padding: 12px 16px;
+  border-radius: 8px;
+}
+
+.button:hover {
+  opacity: 0.6;
+}
+
+.button:active {
+  opacity: 0.9;
+}
+
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0px auto;
+  padding: 0px 24px;
 }
 
 .section {
@@ -39,12 +59,14 @@ body {
     justify-content: space-evenly;
   }
 }
+
 .menu-bar-wrapper {
   position: sticky;
   top: 0;
   background-color: white;
   z-index: 999;
 }
+
 .nav-list {
   display: flex;
 }
@@ -69,17 +91,35 @@ body {
 
 /*---- Hero Section ----*/
 .hero-section {
-  background-image: url("../images/hero-background.jpg");
+  background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
+    url("../images/hero-background.jpg");
   /* Photo by Nicholas Kampouris on Unsplash */
   background-size: cover;
   background-position: center center;
   height: 720px;
 }
 
+@media screen and (max-width: 768px) {
+  .hero-section {
+    background-image:
+    linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
+    url("../images/hero-background-small.jpg");
+  }
+}
+
 .hero-title {
   font-size: 64px;
   font-weight: 600;
   padding-top: 128px;
+  color: white;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 512px) {
+  .hero-title {
+    font-size: 48px;
+  }
 }
 
 /*---- Collection Section ----*/
@@ -98,44 +138,36 @@ body {
 
 .collection-item-one {
   grid-area: first;
-  background-image: linear-gradient(
-      to bottom right,
+  background-image: linear-gradient(to bottom right,
       rgba(255, 255, 255, 0.9),
-      rgba(0, 0, 0, 0.1)
-    ),
+      rgba(0, 0, 0, 0.1)),
     url("../images/classic-collection.jpg");
   /* Photo by NordWood Themes on Unsplash */
 }
 
 .collection-item-two {
   grid-area: second;
-  background-image: linear-gradient(
-      to bottom right,
+  background-image: linear-gradient(to bottom right,
       rgba(255, 255, 255, 0.6),
-      rgba(255, 255, 255, 0.2)
-    ),
+      rgba(255, 255, 255, 0.2)),
     url("../images/sport-collection.jpg");
   /* Photo by Tom Radetzki on Unsplash */
 }
 
 .collection-item-three {
   grid-area: third;
-  background-image: linear-gradient(
-      to bottom right,
+  background-image: linear-gradient(to bottom right,
       rgba(255, 255, 255, 0.6),
-      rgba(255, 255, 255, 0.3)
-    ),
+      rgba(255, 255, 255, 0.3)),
     url("../images/sandal-collection.jpg");
   /* Photo by Andy Garza on Unsplash */
 }
 
 .collection-item-four {
   grid-area: fourth;
-  background-image: linear-gradient(
-      to bottom right,
+  background-image: linear-gradient(to bottom right,
       rgba(255, 255, 255, 0),
-      rgba(0, 0, 0, 0.2)
-    ),
+      rgba(0, 0, 0, 0.2)),
     url("../images/casual-collection.jpg");
   /* Photo by Trendest Studio on Unsplash */
 }
@@ -147,6 +179,21 @@ body {
     "first first fourth fourth";
   row-gap: 16px;
   column-gap: 16px;
+}
+
+@media screen and (max-width:768px) {
+  .collection-list {
+    grid-template-areas:
+      "first first second second"
+      "third third fourth fourth";
+  }
+}
+
+@media screen and (max-width:512px) {
+  .collection-list {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 /*---- Product Section ----*/
@@ -193,6 +240,18 @@ body {
   column-gap: 32px;
 }
 
+@media screen and (max-width: 768px) {
+  .product-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 512px) {
+  .product-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 .price {
   margin-top: 24px;
 }
@@ -220,6 +279,7 @@ body {
   .about-content {
     flex-direction: column;
   }
+
   .about-image {
     width: 100%;
     margin-bottom: 24px;
@@ -231,6 +291,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.about-description {
+  font-size: 20px;
+  font-weight: 300;
 }
 
 /*---- Social Section ----*/
@@ -248,6 +313,19 @@ body {
 @media screen and (max-width: 768px) {
   .social-list {
     display: none;
+  }
+}
+/*---- Footer ----*/
+.footer { 
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+@media screen and (max-width: 512px) {
+  .footer {
+    justify-content: center;
   }
 }
 /*---- Effects ----*/
@@ -269,3 +347,4 @@ body {
 .hover-elevate:active {
   box-shadow: none;
 }
+
