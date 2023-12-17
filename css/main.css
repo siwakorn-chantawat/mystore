@@ -91,8 +91,11 @@ body {
 
 /*---- Hero Section ----*/
 .hero-section {
-  background-image:
-    linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0)
+    ),
     url("../images/hero-background.jpg");
   /* Photo by Nicholas Kampouris on Unsplash */
   background-size: cover;
@@ -102,9 +105,12 @@ body {
 
 @media screen and (max-width: 768px) {
   .hero-section {
-    background-image:
-    linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
-    url("../images/hero-background-small.jpg");
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0)
+      ),
+      url("../images/hero-background-small.jpg");
   }
 }
 
@@ -138,36 +144,44 @@ body {
 
 .collection-item-one {
   grid-area: first;
-  background-image: linear-gradient(to bottom right,
+  background-image: linear-gradient(
+      to bottom right,
       rgba(255, 255, 255, 0.9),
-      rgba(0, 0, 0, 0.1)),
+      rgba(0, 0, 0, 0.1)
+    ),
     url("../images/classic-collection.jpg");
   /* Photo by NordWood Themes on Unsplash */
 }
 
 .collection-item-two {
   grid-area: second;
-  background-image: linear-gradient(to bottom right,
+  background-image: linear-gradient(
+      to bottom right,
       rgba(255, 255, 255, 0.6),
-      rgba(255, 255, 255, 0.2)),
+      rgba(255, 255, 255, 0.2)
+    ),
     url("../images/sport-collection.jpg");
   /* Photo by Tom Radetzki on Unsplash */
 }
 
 .collection-item-three {
   grid-area: third;
-  background-image: linear-gradient(to bottom right,
+  background-image: linear-gradient(
+      to bottom right,
       rgba(255, 255, 255, 0.6),
-      rgba(255, 255, 255, 0.3)),
+      rgba(255, 255, 255, 0.3)
+    ),
     url("../images/sandal-collection.jpg");
   /* Photo by Andy Garza on Unsplash */
 }
 
 .collection-item-four {
   grid-area: fourth;
-  background-image: linear-gradient(to bottom right,
+  background-image: linear-gradient(
+      to bottom right,
       rgba(255, 255, 255, 0),
-      rgba(0, 0, 0, 0.2)),
+      rgba(0, 0, 0, 0.2)
+    ),
     url("../images/casual-collection.jpg");
   /* Photo by Trendest Studio on Unsplash */
 }
@@ -181,7 +195,7 @@ body {
   column-gap: 16px;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
   .collection-list {
     grid-template-areas:
       "first first second second"
@@ -189,7 +203,7 @@ body {
   }
 }
 
-@media screen and (max-width:512px) {
+@media screen and (max-width: 512px) {
   .collection-list {
     display: flex;
     flex-direction: column;
@@ -347,4 +361,3 @@ body {
 .hover-elevate:active {
   box-shadow: none;
 }
-
